@@ -1,0 +1,78 @@
+﻿@model ReadingListViewModel
+
+<div class="row">
+    <div class="col-3 bg-white text-center vh-100">
+        <partial name="_SideBarPartial.cshtml" />
+    </div>
+    <div class="col">
+
+        <div class="row">
+            <div class="bg-white p-4 m-4" style="padding:20px; font-family: 'New Rocker' ,cursive;">
+                <h1>Reading Wish List</h1>
+                <a asp-controller="Readers" asp-action="AddWish" class="btn btn-lg btn-primary float-right">Add Book</a>
+                <table class="table table-striped">
+                    <thead>
+                        <tr scope="row">
+                            <th scope="col">Book Title</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Genre</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        @foreach (var book in Model.Books)
+                        {
+                            <tr scope="row">
+
+                                <td>@book.BookTitle</td>
+                                <td>@book.Author</td>
+                                <td>@book.Genre</td>
+                                <td>
+                                    <a asp-controller="Readers" asp-action="EditWish" asp-route-id="@book.Id" class="btn btn-sm btn-secondary">Edit</a>
+
+                                </td>
+                                <td>
+                                    <a asp-controller="Readers" asp-action="Delete" asp-route-id="@book.Id" class="btn btn-sm btn-secondary">Delete</a>
+
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div>
+    <div class="row vw-100">
+        <a asp-controller="Readers" asp-action="add" class="btn btn-lg btn-primary">Add Book</a>
+    </div>-->
+@*<div class="col-6 m-0 p-3 text-center bg-white vh-100" >*@
+<!--<div style="background-color: grey">
+    <div class="row" style="font-family:'New Rocker',cursive; font-size:40px; padding:25px">
+        Books I've Read Below
+    </div>
+    <div>
+        <table style="width:100%">-->
+@*Test Table*@
+<!--<tr>
+                    <th>Book Title</th>
+                    <th>Book Author</th>
+                    <th>Book Genre</th>
+                </tr>
+                <tr>
+                    <td>The Hobbit</td>
+                    <td>J.R.R. Tolkein</td>
+                    <td>Fantasy</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>-->

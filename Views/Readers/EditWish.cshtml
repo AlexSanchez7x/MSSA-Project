@@ -1,0 +1,31 @@
+﻿@model UsersBooks
+
+<div class="row" style="margin-top: 200px;">
+
+    <form asp-action="editwish" method="post" class="col-4 offset-4 border shadow bg-white" style="padding:20px; font-family: 'New Rocker' ,cursive;">
+
+        <div class="form-group">
+            <label>
+                Book Title
+            </label>
+            <input type="text" asp-for="@Model.BookTitle" />
+        </div>
+
+        <div class="form-group">
+            <label>
+                Author
+            </label>
+            <input type="text" asp-for="@Model.Author" />
+        </div>
+        <div class="form-group">
+            <label>
+                Genre
+            </label>
+            <input type="text" asp-for="@Model.Genre" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Book</button>
+    </form>
+</div>
+
+
